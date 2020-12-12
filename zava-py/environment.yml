@@ -1,0 +1,24 @@
+name: zava
+
+dependencies:
+  - python=3.6
+  - nose
+  - coverage
+  - flake8
+  - pep8
+  - pyflakes
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - twine
+  - setuptools
+  - pip
+  - pip:
+      - sphinx
+      - sphinx_rtd_theme
+      - sphinxcontrib-bibtex
+      - sphinxcontrib-blockdiag
+      - sphinx-sitemap
+      - jupyter-sphinx
+      - nbsphinx

@@ -65,18 +65,21 @@ def test_plot():
     params = {
         'fig': fig,
         'func': mp,
-        'frames': np.linspace(0, 360, 30),
-        'interval': 20,
+        'frames': np.linspace(0, 360, 360),
         'init_func': mp.init
     }
     anim = animation.FuncAnimation(**params)
 
     plt.close(fig)
     params = {
-        'filename': 'test.mov',
-        'dpi': 500,
-        'progress_callback': lambda i, n: print(f'saving frame {i} / {n}'),
+        'filename': 'test.mp4',
         'writer': 'ffmpeg',
+        'fps': 30,
+        'dpi': 500,
+        'bitrate': -1,
+        'extra_args': ['-r', '25'],
+        'progress_callback': lambda i, n: print(f'saving frame {i} / {n}'),
+        'savefig_kwargs': {},
         'metadata': {
             'title': 'Parallel Coordinates with Grand Tour',
             'artist': 'Clint Eastwood',
